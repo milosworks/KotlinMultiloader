@@ -1,0 +1,60 @@
+[versions]
+java = "21"
+moddev = "2.0.107"
+loom = "1.11-SNAPSHOT"
+dokka = "2.0.0"
+
+# Search for new versions: https://kotlinlang.org/docs/releases.html
+kotlin = "2.2.20"
+# Search for new versions: https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge/files/all
+kotlin-neoforge = "5.10.0"
+kotlin-neoforge-range = "5.9"
+# Search new versions: https://modrinth.com/mod/fabric-language-kotlin/versions
+kotlin-fabric = "1.13.6+kotlin.2.2.20"
+
+minecraft = "1.21.1"
+# Fabric uses semver dependency resolution (>=1.21.1) while neoforge uses a normal version range ([1.21.1,))
+# This field must be written in neoforges version range syntax since we automatically convert it to semver for fabric
+minecraft-range = "[1.21.1, 1.21.2)"
+
+# Search for new versions: https://parchmentmc.org/docs/getting-started#choose-a-version
+parchment = "2024.11.17"
+parchment-mc = "1.21.1"
+
+# Search for new versions: https://projects.neoforged.net/neoforged/neoform
+neoform = "1.21.1-20240808.144430"
+# Search for new versions: https://projects.neoforged.net/neoforged/neoforge
+neoforge = "21.1.208"
+neoforge-range = "[21.1, 21.2)"
+
+# Search for new versions: https://fabricmc.net/develop/
+fabric-loader = "0.17.2"
+fabric-api = "0.116.6+1.21.1"
+
+mixin = "0.8.5"
+mixin-extras = "0.3.5"
+
+[libraries]
+kotlin-neoforge = { module = "thedarkcolour:kotlinforforge-neoforge", version.ref = "kotlin-neoforge" }
+kotlin-fabric = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "kotlin-fabric" }
+
+minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
+parchment = { module = "org.parchmentmc.data:parchment-", version.ref = "parchment" }
+
+fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric-loader" }
+fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric-api" }
+
+mixin = { group = "org.spongepowered", name = "mixin", version.ref = "mixin" }
+mixin-extras = { group = "io.github.llamalad7", name = "mixinextras-common", version.ref = "mixin-extras" }
+
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+dokka-gradle-plugin = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+dokka-javadoc-gradle-plugin = { module = "org.jetbrains.dokka-javadoc:org.jetbrains.dokka-javadoc.gradle.plugin", version.ref = "dokka" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+moddev = { id = "net.neoforged.moddev", version.ref = "moddev" }
+loom = { id = "fabric-loom", version.ref = "loom" }
+
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
