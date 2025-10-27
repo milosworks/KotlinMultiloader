@@ -33,3 +33,4 @@ runs
 # Log file
 *.log
 
+.kotlin
